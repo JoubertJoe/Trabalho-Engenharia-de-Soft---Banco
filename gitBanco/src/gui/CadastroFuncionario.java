@@ -15,6 +15,8 @@ import java.util.Date;
 import java.util.Calendar;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
@@ -22,6 +24,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.Window.Type;
+import javax.swing.ImageIcon;
 
 public class CadastroFuncionario extends JFrame {
 
@@ -63,6 +66,7 @@ public class CadastroFuncionario extends JFrame {
 	private JButton btnVoltar;
 	private JLabel lblEmail;
 	private JTextField txtEmail;
+	private JLabel lblImagem;
 
 	public CadastroFuncionario() {
 		setResizable(false);
@@ -82,6 +86,7 @@ public class CadastroFuncionario extends JFrame {
 
 	public void criaComponentes() {
 		JLabel lblNome = new JLabel("NOME: ");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img//16x16.png"));
 		lblNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNome.setFont(new Font("Arial Black", Font.PLAIN, 11));
 		lblNome.setBounds(32, 42, 46, 14);
@@ -323,6 +328,13 @@ public class CadastroFuncionario extends JFrame {
 		comboCargo.setFont(new Font("Arial Black", Font.PLAIN, 11));
 		comboCargo.setBounds(318, 216, 164, 20);
 		contentPane.add(comboCargo);
+		
+		lblImagem = new JLabel("");
+		lblImagem.setEnabled(false);
+		lblImagem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImagem.setIcon(new ImageIcon("img//300x300.png"));
+		lblImagem.setBounds(0, 0, 544, 460);
+		contentPane.add(lblImagem);
 		
 		
 	}

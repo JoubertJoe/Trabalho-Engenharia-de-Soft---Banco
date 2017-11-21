@@ -5,7 +5,7 @@ import gui.*;
 public class Main {
 
 	public static void main(String[] args) {
-		CadastroCliente  cadastro = new CadastroCliente();
+		Menu  menu = new Menu();
 		// TODO Auto-generated method stub
 
 		

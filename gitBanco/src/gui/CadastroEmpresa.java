@@ -1,6 +1,5 @@
 package gui;
 
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -15,15 +14,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class CadastroEmpresa extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel lblNome, lblCNPJ, lblEndereco, lblBairro, lblCidade, lblUF, lblCep, lblFixo, lblCelular, lblEmail,
-			lblDataCadastro;
+			lblDataCadastro, lblImagem;
 	private JLabel lblInsEstadual, lblInsMunicipal;
 	private JTextField txtNome, txtCNPJ, txtEndereco, txtBairro, txtCidade, txtCEP, txtFixo, txtCelular, txtEmail,
 			txtDataCad;
@@ -196,6 +197,13 @@ public class CadastroEmpresa extends JFrame {
 		txtInsMunicipal.setBounds(384, 302, 150, 20);
 		contentPane.add(txtInsMunicipal);
 		txtInsMunicipal.setColumns(10);
+		
+		lblImagem = new JLabel("");
+		lblImagem.setEnabled(false);
+		lblImagem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImagem.setIcon(new ImageIcon("img//300x300.png"));
+		lblImagem.setBounds(0, 0, 544, 460);
+		contentPane.add(lblImagem);
 
 	}
 
@@ -206,8 +214,8 @@ public class CadastroEmpresa extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				Menu menu = new Menu ();
-				
+				Menu menu = new Menu();
+
 				fechar();
 			}
 		});
@@ -225,16 +233,15 @@ public class CadastroEmpresa extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				
+
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 
 			}
 		});
 	}
-	
+
 	public void fechar() {
-		
+
 		this.setVisible(false);
 	}
 }

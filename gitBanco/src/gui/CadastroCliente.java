@@ -15,10 +15,13 @@ import java.util.Date;
 import java.util.Calendar;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.Window.Type;
@@ -61,12 +64,13 @@ public class CadastroCliente extends JFrame {
 	private JLabel lblSenha;
 	private JPasswordField passwordField;
 	private JButton btnVoltar;
-	private JLabel lblEmail;
+	private JLabel lblEmail, lblImagem;
 	private JTextField txtEmail;
 
 	public CadastroCliente() {
 		setResizable(false);
 		setTitle("BANCO CADASTRO DE FUNCIONARIOS");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img//16x16.png"));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();
@@ -312,6 +316,12 @@ public class CadastroCliente extends JFrame {
 		txtEmail.setBounds(108, 340, 374, 20);
 		contentPane.add(txtEmail);
 		
+		lblImagem = new JLabel("");
+		lblImagem.setEnabled(false);
+		lblImagem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImagem.setIcon(new ImageIcon("img//300x300.png"));
+		lblImagem.setBounds(0, 0, 544, 460);
+		contentPane.add(lblImagem);
 		
 	}
 

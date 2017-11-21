@@ -18,19 +18,19 @@ import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 
-public class Deposito extends JFrame {
+public class Transferencia extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtAgencia, txtConta, txtValor;
 	private JLabel lblAgencia, lblConta, lblValor;
-	private JButton btnVoltar, btnDepositar;
+	private JButton btnVoltar, btnTransferir;
 	private JTextField txtTelefone;
 
-	public Deposito() {
-		super("Deposito");
+	public Transferencia() {
+		super("Transferencia");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img//16x16.png"));
 		setResizable(false);
-		setTitle("Deposito de Valores Eletr\u00F4nicos");
+		setTitle("Transferencia de Valores Eletr\u00F4nicos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 400);
 		contentPane = new JPanel();
@@ -84,19 +84,19 @@ public class Deposito extends JFrame {
 		btnVoltar.setBounds(10, 318, 104, 23);
 		contentPane.add(btnVoltar);
 
-		btnDepositar = new JButton("Depositar");
-		btnDepositar.setFont(new Font("Arial Black", Font.PLAIN, 11));
-		btnDepositar.setBounds(10, 283, 104, 23);
-		contentPane.add(btnDepositar);
+		btnTransferir = new JButton("Transferir");
+		btnTransferir.setFont(new Font("Arial Black", Font.PLAIN, 11));
+		btnTransferir.setBounds(10, 283, 104, 23);
+		contentPane.add(btnTransferir);
 
 		JLabel lblTelefone = new JLabel("Telefone: ");
 		lblTelefone.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTelefone.setFont(new Font("Arial Black", Font.PLAIN, 11));
-		lblTelefone.setBounds(0, 213, 70, 14);
+		lblTelefone.setBounds(0, 190, 70, 14);
 		contentPane.add(lblTelefone);
 
 		txtTelefone = new JTextField();
-		txtTelefone.setBounds(80, 210, 128, 20);
+		txtTelefone.setBounds(80, 187, 128, 20);
 		contentPane.add(txtTelefone);
 		txtTelefone.setColumns(10);
 		
@@ -122,6 +122,17 @@ public class Deposito extends JFrame {
 		lblContato.setBounds(81, 162, 128, 14);
 		contentPane.add(lblContato);
 		
+		JLabel lblNome = new JLabel("Nome: ");
+		lblNome.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNome.setFont(new Font("Arial Black", Font.PLAIN, 11));
+		lblNome.setBounds(0, 218, 70, 14);
+		contentPane.add(lblNome);
+		
+		JTextField txtNome = new JTextField();
+		txtNome.setColumns(10);
+		txtNome.setBounds(80, 215, 128, 20);
+		contentPane.add(txtNome);
+		
 		JLabel lblImagem = new JLabel("");
 		lblImagem.setIcon(new ImageIcon("img//Smaugold 200x200.png"));
 		lblImagem.setBounds(291, 162, 200, 179);
@@ -143,12 +154,12 @@ public class Deposito extends JFrame {
 			}
 		});
 
-		btnDepositar.addActionListener(new ActionListener() {
+		btnTransferir.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				JOptionPane.showMessageDialog(null, "deposito efetuado com sucesso!");
+				JOptionPane.showMessageDialog(null, "transferencia efetuado com sucesso!");
 
 			}
 		});

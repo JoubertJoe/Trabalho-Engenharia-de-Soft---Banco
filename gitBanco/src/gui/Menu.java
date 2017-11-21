@@ -11,14 +11,19 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnCadastrarEmpresa, btnCadastrarFuncionario, btnCadastrarCliente, btnDesposito, btnTransferencia;
+	private JLabel label;
 
 	public Menu() {
 		super ("MENU");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Joube\\Desktop\\16x16.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 500);
 		contentPane = new JPanel();
@@ -37,28 +42,33 @@ public class Menu extends JFrame {
 
 		btnCadastrarEmpresa = new JButton("Cadastrar Empresa");
 		btnCadastrarEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCadastrarEmpresa.setBounds(164, 150, 175, 23);
+		btnCadastrarEmpresa.setBounds(166, 239, 175, 23);
 		contentPane.add(btnCadastrarEmpresa);
 
 		btnCadastrarFuncionario = new JButton("Cadastrar Funcionario");
 		btnCadastrarFuncionario.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCadastrarFuncionario.setBounds(164, 197, 175, 23);
+		btnCadastrarFuncionario.setBounds(166, 286, 175, 23);
 		contentPane.add(btnCadastrarFuncionario);
 
 		btnCadastrarCliente = new JButton("Cadastrar Cliente");
 		btnCadastrarCliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCadastrarCliente.setBounds(164, 244, 175, 23);
+		btnCadastrarCliente.setBounds(166, 333, 175, 23);
 		contentPane.add(btnCadastrarCliente);
 
 		btnDesposito = new JButton("Deposito\r\n");
 		btnDesposito.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnDesposito.setBounds(164, 292, 175, 23);
+		btnDesposito.setBounds(166, 381, 175, 23);
 		contentPane.add(btnDesposito);
 
 		btnTransferencia = new JButton("Transferencia");
 		btnTransferencia.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnTransferencia.setBounds(164, 338, 175, 23);
+		btnTransferencia.setBounds(166, 427, 175, 23);
 		contentPane.add(btnTransferencia);
+		
+		label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\Joube\\Desktop\\Smaugold 200x200.png"));
+		label.setBounds(141, 11, 200, 217);
+		contentPane.add(label);
 
 	}
 
@@ -116,7 +126,7 @@ public class Menu extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				Transferencia transfere = new Transferencia();
 				fechar();
 			}
 		});
